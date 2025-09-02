@@ -15,7 +15,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Your premier destination for premium car accessories and modifications. 
-              We specialize in high-quality parts that enhance your vehicle's performance and style.
+              We specialize in high-quality parts that enhance your vehicle&#39;s performance and style.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

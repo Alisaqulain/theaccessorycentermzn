@@ -86,7 +86,7 @@ export default function About() {
                 deserves to be transformed into something extraordinary.
               </p>
               <p className="text-gray-300 text-lg">
-                From performance upgrades to style enhancements, we're committed to helping you 
+                From performance upgrades to style enhancements, we&#39;re committed to helping you 
                 create the car of your dreams while maintaining the highest standards of quality and safety.
               </p>
             </div>

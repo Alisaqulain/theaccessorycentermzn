@@ -197,7 +197,7 @@ export default function Products() {
             Premium Car Accessories
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up">
-            Discover high-quality accessories to enhance your vehicle's performance, style, and functionality
+            Discover high-quality accessories to enhance your vehicle&#39;s performance, style, and functionality
           </p>
           
           {/* Animated decorative elements */}

@@ -166,7 +166,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">Contact Us</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
-            Get in touch with our team of automotive experts. We're here to help you with any questions or concerns.
+            Get in touch with our team of automotive experts. We&#39;re here to help you with any questions or concerns.
           </p>
         </div>
       </div>
@@ -219,7 +219,7 @@ export default function Contact() {
               
               {submitSuccess && (
                 <div className="bg-green-600 text-white p-4 rounded-lg mb-6 animate-fade-in-down">
-                  Thank you for your message! We'll get back to you within 24 hours.
+                  Thank you for your message! We&#39;ll get back to you within 24 hours.
                 </div>
               )}
 
