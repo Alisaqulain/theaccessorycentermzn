@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
+// import Image from 'next/image'
+// 
 export default function Home() {
   // Animation for elements when they come into view
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -123,7 +124,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <img
-                src="./pfirst.jpg"
+                src="/images/3.jpg"
                 alt="Car Mat"
                 className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
               />
@@ -139,7 +140,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <img
-                src="./psecond.jpg"
+                src="./images/brack.png"
                 alt="Car Cover"
                 width={600}
                 height={400}
@@ -157,7 +158,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <img
-                src="./pthird.jpg"
+                src="./speaker.jpg"
                 alt="Car Charger"
                 width={600}
                 height={400}
