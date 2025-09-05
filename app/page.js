@@ -1,16 +1,44 @@
 "use client";
 import Image from "next/image";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 // import Image from 'next/image'
 // 
 export default function Home() {
   // Animation for elements when they come into view
-  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [inView1, setInView1] = useState(false);
+  const [inView2, setInView2] = useState(false);
+  const [inView3, setInView3] = useState(false);
+  const [inView4, setInView4] = useState(false);
+  
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+
+  // Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === ref1.current) setInView1(true);
+            if (entry.target === ref2.current) setInView2(true);
+            if (entry.target === ref3.current) setInView3(true);
+            if (entry.target === ref4.current) setInView4(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref1.current) observer.observe(ref1.current);
+    if (ref2.current) observer.observe(ref2.current);
+    if (ref3.current) observer.observe(ref3.current);
+    if (ref4.current) observer.observe(ref4.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   // Parallax effect for hero section
   useEffect(() => {
