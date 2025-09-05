@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import Head from 'next/head';
 
 export default function About() {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -58,7 +59,48 @@ export default function About() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <>
+      <Head>
+        <title>About The Accessory Center | Premium Car Accessories Since 2010</title>
+        <meta name="description" content="Learn about The Accessory Center - your trusted partner in automotive excellence for over a decade. Premium car accessories, expert installation, and exceptional customer service." />
+        <meta name="keywords" content="about accessory center, car accessories company, automotive excellence, premium car parts, expert installation, customer service" />
+        <link rel="canonical" href="https://theaccessorycenter.com/about" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About The Accessory Center",
+              "description": "Your trusted partner in automotive excellence for over a decade",
+              "url": "https://theaccessorycenter.com/about",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "The Accessory Center",
+                "description": "Premium car accessories and modifications store",
+                "foundingDate": "2010",
+                "url": "https://theaccessorycenter.com",
+                "logo": "https://theaccessorycenter.com/logo.jpg",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sadaat Hostel, Arya Samaj Road",
+                  "addressLocality": "Muzaffarnagar",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "251002",
+                  "addressCountry": "IN"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "(555) 123-4567",
+                  "contactType": "customer service",
+                  "email": "info@accessorycenter.com"
+                }
+              }
+            })
+          }}
+        />
+      </Head>
+      <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
       <div className="bg-gray-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -271,6 +313,7 @@ export default function About() {
           animation-delay: 0.5s;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function Products() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -21,96 +22,192 @@ export default function Products() {
     { id: 'all', name: 'All Categories' },
     { id: 'exterior', name: 'Exterior Accessories' },
     { id: 'interior', name: 'Interior Accessories' },
-    { id: 'performance', name: 'Performance Parts' },
     { id: 'electronics', name: 'Electronics' },
-    { id: 'maintenance', name: 'Maintenance' }
+    { id: 'maintenance', name: 'Maintenance' },
+    { id: 'service', name: 'Services' }
   ]
 
   const products = [
     {
       id: 1,
-      name: 'LED Headlight Kit',
-      category: 'exterior',
+      name: 'Speaker',
+      category: 'electronics',
       price: 89.99,
       rating: 4.8,
       reviews: 127,
       image: '/images/6.jpg',
-      description: 'Bright LED headlights for improved visibility and modern look'
+      description: 'High-quality car speakers for enhanced audio experience'
     },
     {
       id: 2,
-      name: 'Carbon Fiber Spoiler',
+      name: 'Head Light',
       category: 'exterior',
-      price: 299.99,
+      price: 149.99,
       rating: 4.6,
       reviews: 89,
       image: '/images/3.jpg',
-      description: 'Lightweight carbon fiber rear spoiler for enhanced aerodynamics'
+      description: 'Premium LED headlights for improved visibility and modern look'
     },
     {
       id: 3,
-      name: 'Leather Seat Covers',
-      category: 'interior',
-      price: 159.99,
+      name: 'Horn',
+      category: 'exterior',
+      price: 39.99,
       rating: 4.7,
       reviews: 203,
       image: '/images/5.jpg',
-      description: 'Premium leather seat covers for luxury comfort and style'
+      description: 'Loud and clear car horn for safety and attention'
     },
     {
       id: 4,
-      name: 'Performance Exhaust System',
-      category: 'performance',
-      price: 599.99,
-      rating: 4.9,
+      name: 'Hooter',
+      category: 'exterior',
+      price: 29.99,
+      rating: 4.5,
       reviews: 156,
       image: '/images/8.webp',
-      description: 'High-performance exhaust system for improved power and sound'
+      description: 'Compact hooter for additional vehicle alert system'
     },
-    
     {
-      id: 6,
-      name: 'Air Filter Upgrade',
-      category: 'performance',
+      id: 5,
+      name: 'LED Light',
+      category: 'exterior',
       price: 49.99,
-      rating: 4.4,
+      rating: 4.8,
       reviews: 234,
       image: '/images/air.jpg',
-      description: 'High-flow air filter for improved engine performance'
+      description: 'Energy-efficient LED lights for better illumination'
     },
     {
-      id: 7,
-      name: 'LED Interior Lights',
-      category: 'interior',
-      price: 29.99,
+      id: 6,
+      name: 'Door Visor',
+      category: 'exterior',
+      price: 79.99,
       rating: 4.6,
       reviews: 167,
       image: '/images/7.jpeg',
-      description: 'Ambient LED lighting kit for interior customization'
+      description: 'Weather protection door visors for all weather conditions'
     },
-    
     {
-      id: 9,
-      name: 'Dash Camera',
+      id: 7,
+      name: 'Bass Tube',
       category: 'electronics',
-      price: 129.99,
+      price: 199.99,
       rating: 4.7,
       reviews: 145,
       image: '/images/4.jpg',
-      description: '1080p dash camera with night vision and GPS tracking'
+      description: 'Powerful bass tube for deep, rich sound experience'
     },
-    
     {
-      id: 11,
-      name: 'Brake Pads',
-      category: 'maintenance',
-      price: 69.99,
+      id: 8,
+      name: 'Ambient Light',
+      category: 'interior',
+      price: 59.99,
       rating: 4.5,
       reviews: 178,
       image: '/images/brack.png',
-      description: 'Ceramic brake pads for superior stopping power and low dust'
+      description: 'Mood lighting for interior ambiance and style'
     },
-    
+    {
+      id: 9,
+      name: 'Polish & Coating',
+      category: 'maintenance',
+      price: 99.99,
+      rating: 4.9,
+      reviews: 89,
+      image: '/images/3.jpg',
+      description: 'Professional car polish and protective coating service'
+    },
+    {
+      id: 10,
+      name: 'Wheel Caps',
+      category: 'exterior',
+      price: 69.99,
+      rating: 4.4,
+      reviews: 156,
+      image: '/images/5.jpg',
+      description: 'Stylish wheel caps for enhanced vehicle appearance'
+    },
+    {
+      id: 11,
+      name: 'Steering Cover',
+      category: 'interior',
+      price: 39.99,
+      rating: 4.6,
+      reviews: 203,
+      image: '/images/8.webp',
+      description: 'Comfortable steering wheel cover for better grip and style'
+    },
+    {
+      id: 12,
+      name: 'Bumper Guard',
+      category: 'exterior',
+      price: 129.99,
+      rating: 4.7,
+      reviews: 127,
+      image: '/images/air.jpg',
+      description: 'Protective bumper guard for vehicle safety and style'
+    },
+    {
+      id: 13,
+      name: 'Seat Cover',
+      category: 'interior',
+      price: 89.99,
+      rating: 4.8,
+      reviews: 234,
+      image: '/images/7.jpeg',
+      description: 'Premium seat covers for comfort and protection'
+    },
+    {
+      id: 14,
+      name: 'Leg Guard',
+      category: 'exterior',
+      price: 79.99,
+      rating: 4.5,
+      reviews: 145,
+      image: '/images/4.jpg',
+      description: 'Protective leg guard for enhanced vehicle safety'
+    },
+    {
+      id: 15,
+      name: 'Body Cover',
+      category: 'exterior',
+      price: 149.99,
+      rating: 4.6,
+      reviews: 178,
+      image: '/images/brack.png',
+      description: 'All-weather body cover for complete vehicle protection'
+    },
+    {
+      id: 16,
+      name: 'Flooring Mat',
+      category: 'interior',
+      price: 49.99,
+      rating: 4.7,
+      reviews: 89,
+      image: '/images/3.jpg',
+      description: 'High-quality flooring mats for interior protection and style'
+    },
+    {
+      id: 17,
+      name: 'Coating',
+      category: 'maintenance',
+      price: 199.99,
+      rating: 4.9,
+      reviews: 156,
+      image: '/images/5.jpg',
+      description: 'Professional protective coating for long-lasting shine'
+    },
+    {
+      id: 18,
+      name: 'Base To Top All Cars',
+      category: 'service',
+      price: 999.99,
+      rating: 4.8,
+      reviews: 67,
+      image: '/images/8.webp',
+      description: 'Complete car customization service from base to top for all car types'
+    }
   ]
 
   const filteredProducts = products.filter(product => {
@@ -175,7 +272,50 @@ export default function Products() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <>
+      <Head>
+        <title>Car Accessories Store | Speakers, Headlights, Horns & More</title>
+        <meta name="description" content="Shop premium car accessories including speakers, headlights, horns, LED lights, door visors, bass tubes, ambient lights, wheel caps, seat covers, and complete car customization services." />
+        <meta name="keywords" content="car accessories store, car speakers, headlights, horns, LED lights, door visor, bass tube, ambient light, wheel caps, seat covers, bumper guard, body cover, car coating, car customization" />
+        <link rel="canonical" href="https://theaccessorycenter.com/products" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Car Accessories Store",
+              "description": "Premium car accessories and automotive parts",
+              "url": "https://theaccessorycenter.com/products",
+              "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": products.map((product, index) => ({
+                  "@type": "ListItem",
+                  "position": index + 1,
+                  "item": {
+                    "@type": "Product",
+                    "name": product.name,
+                    "description": product.description,
+                    "image": `https://theaccessorycenter.com${product.image}`,
+                    "offers": {
+                      "@type": "Offer",
+                      "price": product.price,
+                      "priceCurrency": "USD",
+                      "availability": "https://schema.org/InStock"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": product.rating,
+                      "reviewCount": product.reviews
+                    }
+                  }
+                }))
+              }
+            })
+          }}
+        />
+      </Head>
+      <div className="min-h-screen bg-gray-900">
       {/* Loading Animation */}
       {isLoading && (
         <div className="fixed inset-0 bg-gray-900 z-50 flex items-center justify-center">
@@ -452,6 +592,7 @@ export default function Products() {
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   )
 }

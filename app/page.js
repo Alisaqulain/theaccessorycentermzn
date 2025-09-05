@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Head from "next/head";
 // import Image from 'next/image'
 // 
 export default function Home() {
@@ -26,7 +27,78 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center overflow-hidden">
+    <>
+      <Head>
+        <title>Premium Car Accessories & Modifications | The Accessory Center</title>
+        <meta name="description" content="Transform your ride with premium car accessories, performance parts, and modifications. Expert installation, quality products, and exceptional service. Shop interior, exterior, electronics, and performance accessories." />
+        <meta name="keywords" content="car accessories, automotive parts, car modifications, performance parts, interior accessories, exterior accessories, car electronics, LED headlights, car covers, seat covers" />
+        <link rel="canonical" href="https://theaccessorycenter.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoPartsStore",
+              "name": "The Accessory Center",
+              "description": "Premium car accessories and modifications store",
+              "url": "https://theaccessorycenter.com",
+              "logo": "https://theaccessorycenter.com/logo.jpg",
+              "image": "https://theaccessorycenter.com/logo.jpg",
+              "telephone": "(555) 123-4567",
+              "email": "info@accessorycenter.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sadaat Hostel, Arya Samaj Road",
+                "addressLocality": "Muzaffarnagar",
+                "addressRegion": "Uttar Pradesh",
+                "postalCode": "251002",
+                "addressCountry": "IN"
+              },
+              "openingHours": [
+                "Mo-Fr 09:00-19:00",
+                "Sa 10:00-18:00",
+                "Su 12:00-17:00"
+              ],
+              "sameAs": [
+                "https://www.facebook.com/accessorycenter",
+                "https://www.instagram.com/accessorycenter",
+                "https://www.twitter.com/accessorycenter"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Car Accessories",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Product",
+                      "name": "LED Headlight Kit",
+                      "description": "Bright LED headlights for improved visibility and modern look"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Product",
+                      "name": "Carbon Fiber Spoiler",
+                      "description": "Lightweight carbon fiber rear spoiler for enhanced aerodynamics"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Product",
+                      "name": "Leather Seat Covers",
+                      "description": "Premium leather seat covers for luxury comfort and style"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+      </Head>
+      <main className="flex flex-col items-center justify-center overflow-hidden">
       {/* Hero Section with Parallax Effect */}
       <section className="relative w-full h-[90vh] overflow-hidden">
         <div
@@ -67,12 +139,13 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div className="rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 group">
             <div className="overflow-hidden">
-              <img
-                src="./int.jpg"
-                alt="Interior"
+              <Image
+                src="/int.jpg"
+                alt="Interior Car Accessories - Premium interior modifications and styling"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                priority
               />
             </div>
             <div className="p-4">
@@ -83,7 +156,7 @@ export default function Home() {
             <div className="overflow-hidden">
               <Image
                 src="https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_1280.jpg"
-                alt="Exterior"
+                alt="Exterior Car Accessories - Premium exterior modifications and styling"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -97,7 +170,7 @@ export default function Home() {
             <div className="overflow-hidden">
               <Image
                 src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg"
-                alt="Electronics"
+                alt="Car Electronics - Premium automotive electronics and accessories"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -123,9 +196,11 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
-              <img
+              <Image
                 src="/images/3.jpg"
-                alt="Car Mat"
+                alt="Premium Car Floor Mats - High-quality automotive floor protection"
+                width={600}
+                height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
@@ -139,9 +214,9 @@ export default function Home() {
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
-              <img
-                src="./images/brack.png"
-                alt="Car Cover"
+              <Image
+                src="/images/brack.png"
+                alt="All-Weather Car Cover - Premium vehicle protection and weather resistance"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
@@ -157,9 +232,9 @@ export default function Home() {
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
-              <img
-                src="./speaker.jpg"
-                alt="Car Charger"
+              <Image
+                src="/speaker.jpg"
+                alt="Fast Car Charger - High-speed automotive charging solution"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
@@ -234,6 +309,7 @@ export default function Home() {
           animation-delay: 0.5s;
         }
       `}</style>
-    </main>
+      </main>
+    </>
   );
 }

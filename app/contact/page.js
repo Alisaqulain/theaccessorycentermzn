@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Head from 'next/head'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -160,7 +161,58 @@ export default function Contact() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <>
+      <Head>
+        <title>Contact The Accessory Center | Get Expert Automotive Support</title>
+        <meta name="description" content="Contact The Accessory Center for expert automotive support. Get help with car accessories, installation guidance, and product recommendations. Located in Muzaffarnagar, UP." />
+        <meta name="keywords" content="contact accessory center, automotive support, car accessories help, installation guidance, expert advice, Muzaffarnagar" />
+        <link rel="canonical" href="https://theaccessorycenter.com/contact" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact The Accessory Center",
+              "description": "Get expert automotive support and guidance",
+              "url": "https://theaccessorycenter.com/contact",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "The Accessory Center",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sadaat Hostel, Arya Samaj Road",
+                  "addressLocality": "Muzaffarnagar",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "251002",
+                  "addressCountry": "IN"
+                },
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "(555) 123-4567",
+                    "contactType": "customer service",
+                    "email": "info@accessorycenter.com",
+                    "availableLanguage": "English"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "(555) 123-4568",
+                    "contactType": "technical support",
+                    "email": "support@accessorycenter.com"
+                  }
+                ],
+                "openingHours": [
+                  "Mo-Fr 09:00-19:00",
+                  "Sa 10:00-18:00",
+                  "Su 12:00-17:00"
+                ]
+              }
+            })
+          }}
+        />
+      </Head>
+      <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
       <div className="bg-gray-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -487,6 +539,7 @@ export default function Contact() {
           animation-delay: 0.5s;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   )
 }
