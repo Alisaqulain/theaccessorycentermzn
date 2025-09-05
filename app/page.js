@@ -105,7 +105,7 @@ export default function Home() {
           id="parallax-bg"
           className="absolute inset-0 transition-transform duration-300"
         >
-          <Image
+           <Image
             src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
             alt="Car Accessories"
             fill
@@ -197,7 +197,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <Image
-                src="/images/3.jpg"
+                src="/images/car horn.avif"
                 alt="Premium Car Floor Mats - High-quality automotive floor protection"
                 width={600}
                 height={400}
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold">Premium Car Mat</h3>
-              <p className="text-gray-600 mt-2">₹2,499</p>
+              <p className="text-gray-600 mt-2">₹499</p>
               <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                 Buy Now
               </button>
@@ -215,7 +215,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <Image
-                src="/images/brack.png"
+                src="/images/car streeing cover.jpg"
                 alt="All-Weather Car Cover - Premium vehicle protection and weather resistance"
                 width={600}
                 height={400}
@@ -224,7 +224,7 @@ export default function Home() {
             </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold">All-Weather Car Cover</h3>
-              <p className="text-gray-600 mt-2">₹3,199</p>
+              <p className="text-gray-600 mt-2">₹199</p>
               <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                 Buy Now
               </button>
@@ -233,7 +233,7 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
             <div className="overflow-hidden">
               <Image
-                src="/speaker.jpg"
+                src="/images/car body cover.jpg"
                 alt="Fast Car Charger - High-speed automotive charging solution"
                 width={600}
                 height={400}

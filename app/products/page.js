@@ -30,184 +30,115 @@ export default function Products() {
   const products = [
     {
       id: 1,
-      name: 'Speaker',
+      name: 'Car headlight',
       category: 'electronics',
-      price: 89.99,
+      price: 3000,
       rating: 4.8,
       reviews: 127,
-      image: '/images/6.jpg',
+      image: '/images/car headlight.jpeg',
       description: 'High-quality car speakers for enhanced audio experience'
     },
     {
       id: 2,
-      name: 'Head Light',
+      name: 'car hooter',
       category: 'exterior',
-      price: 149.99,
+      price: 300,
       rating: 4.6,
       reviews: 89,
-      image: '/images/3.jpg',
+      image: '/images/car hooter.jpg',
       description: 'Premium LED headlights for improved visibility and modern look'
     },
     {
       id: 3,
-      name: 'Horn',
+      name: 'car lef light',
       category: 'exterior',
-      price: 39.99,
+      price: 2000,
       rating: 4.7,
       reviews: 203,
-      image: '/images/5.jpg',
+      image: '/images/car lef light.jpg',
       description: 'Loud and clear car horn for safety and attention'
     },
     {
       id: 4,
-      name: 'Hooter',
+      name: 'car floating mat',
       category: 'exterior',
-      price: 29.99,
+      price: 2500,
       rating: 4.5,
       reviews: 156,
-      image: '/images/8.webp',
+      image: '/images/car floating mat.jpg',
       description: 'Compact hooter for additional vehicle alert system'
     },
     {
       id: 5,
-      name: 'LED Light',
+      name: 'car coating',
       category: 'exterior',
-      price: 49.99,
+      price: 999,
       rating: 4.8,
       reviews: 234,
-      image: '/images/air.jpg',
+      image: '/images/car coating.webp',
       description: 'Energy-efficient LED lights for better illumination'
     },
     {
       id: 6,
-      name: 'Door Visor',
+      name: 'car bumpwe guard',
       category: 'exterior',
-      price: 79.99,
+      price: 500,
       rating: 4.6,
       reviews: 167,
-      image: '/images/7.jpeg',
+      image: '/images/car bumpwe guard.webp',
       description: 'Weather protection door visors for all weather conditions'
     },
     {
       id: 7,
-      name: 'Bass Tube',
+      name: 'car wheel caps',
       category: 'electronics',
-      price: 199.99,
+      price: 1999,
       rating: 4.7,
       reviews: 145,
-      image: '/images/4.jpg',
+      image: '/images/car wheel caps.webp',
       description: 'Powerful bass tube for deep, rich sound experience'
     },
     {
       id: 8,
-      name: 'Ambient Light',
+      name: 'car leg guard',
       category: 'interior',
-      price: 59.99,
+      price: 699,
       rating: 4.5,
       reviews: 178,
-      image: '/images/brack.png',
+      image: '/images/car leg guard.jpg',
       description: 'Mood lighting for interior ambiance and style'
     },
     {
       id: 9,
-      name: 'Polish & Coating',
+      name: 'car polish and coating',
       category: 'maintenance',
-      price: 99.99,
+      price: 999,
       rating: 4.9,
       reviews: 89,
-      image: '/images/3.jpg',
+      image: '/images/car polish and coating.webp',
       description: 'Professional car polish and protective coating service'
     },
     {
       id: 10,
-      name: 'Wheel Caps',
+      name: 'car bass tube',
       category: 'exterior',
-      price: 69.99,
+      price: 2999,
       rating: 4.4,
       reviews: 156,
-      image: '/images/5.jpg',
+      image: '/images/car bass tube.jpg',
       description: 'Stylish wheel caps for enhanced vehicle appearance'
     },
     {
       id: 11,
-      name: 'Steering Cover',
+      name: 'car ambient light',
       category: 'interior',
-      price: 39.99,
+      price: 599,
       rating: 4.6,
       reviews: 203,
-      image: '/images/8.webp',
+      image: '/images/car ambient light.webp',
       description: 'Comfortable steering wheel cover for better grip and style'
     },
-    {
-      id: 12,
-      name: 'Bumper Guard',
-      category: 'exterior',
-      price: 129.99,
-      rating: 4.7,
-      reviews: 127,
-      image: '/images/air.jpg',
-      description: 'Protective bumper guard for vehicle safety and style'
-    },
-    {
-      id: 13,
-      name: 'Seat Cover',
-      category: 'interior',
-      price: 89.99,
-      rating: 4.8,
-      reviews: 234,
-      image: '/images/7.jpeg',
-      description: 'Premium seat covers for comfort and protection'
-    },
-    {
-      id: 14,
-      name: 'Leg Guard',
-      category: 'exterior',
-      price: 79.99,
-      rating: 4.5,
-      reviews: 145,
-      image: '/images/4.jpg',
-      description: 'Protective leg guard for enhanced vehicle safety'
-    },
-    {
-      id: 15,
-      name: 'Body Cover',
-      category: 'exterior',
-      price: 149.99,
-      rating: 4.6,
-      reviews: 178,
-      image: '/images/brack.png',
-      description: 'All-weather body cover for complete vehicle protection'
-    },
-    {
-      id: 16,
-      name: 'Flooring Mat',
-      category: 'interior',
-      price: 49.99,
-      rating: 4.7,
-      reviews: 89,
-      image: '/images/3.jpg',
-      description: 'High-quality flooring mats for interior protection and style'
-    },
-    {
-      id: 17,
-      name: 'Coating',
-      category: 'maintenance',
-      price: 199.99,
-      rating: 4.9,
-      reviews: 156,
-      image: '/images/5.jpg',
-      description: 'Professional protective coating for long-lasting shine'
-    },
-    {
-      id: 18,
-      name: 'Base To Top All Cars',
-      category: 'service',
-      price: 999.99,
-      rating: 4.8,
-      reviews: 67,
-      image: '/images/8.webp',
-      description: 'Complete car customization service from base to top for all car types'
-    }
+    
   ]
 
   const filteredProducts = products.filter(product => {
@@ -469,7 +400,7 @@ export default function Products() {
                   <div className={`p-6 flex flex-col ${viewMode === 'list' ? 'flex-1' : ''}`}>
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-lg font-semibold text-white hover:text-red-400 transition-colors duration-300 cursor-pointer">{product.name}</h3>
-                      <span className="text-2xl font-bold text-red-500 transform hover:scale-110 transition-transform duration-300">${product.price}</span>
+                      <span className="text-2xl font-bold text-red-500 transform hover:scale-110 transition-transform duration-300">₹{product.price}</span>
                     </div>
                     
                     <p className="text-gray-300 text-sm mb-4">{product.description}</p>
