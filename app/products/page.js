@@ -9,6 +9,7 @@ export default function Products() {
   const [sortBy, setSortBy] = useState('name')
   const [viewMode, setViewMode] = useState('grid')
   const [isLoading, setIsLoading] = useState(true)
+  const [favorites, setFavorites] = useState(new Set())
 
   // Simulate loading
   useEffect(() => {
@@ -202,6 +203,18 @@ export default function Products() {
     return stars
   }
 
+  const toggleFavorite = (productId) => {
+    setFavorites(prev => {
+      const newFavorites = new Set(prev)
+      if (newFavorites.has(productId)) {
+        newFavorites.delete(productId)
+      } else {
+        newFavorites.add(productId)
+      }
+      return newFavorites
+    })
+  }
+
   return (
     <>
       <Head>
@@ -254,8 +267,8 @@ export default function Products() {
         </div>
       )}
 
-      {/* Hero Section with Parallax Effect */}
-      <div className="bg-gray-800 py-20 relative overflow-hidden">
+      {/* Hero Section with Cool Modern Effects */}
+      <div className="bg-gray-800 py-20 relative overflow-hidden particles cyber-grid-bg">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute top-0 left-0 w-full h-full transform scale-110">
@@ -264,16 +277,18 @@ export default function Products() {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
-            Premium Car Accessories
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up">
-            Discover high-quality accessories to enhance your vehicle&#39;s performance, style, and functionality
-          </p>
+          <div className="glass-dark p-8 rounded-2xl animate-float">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down neon-text">
+              Premium Car Accessories
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up holographic">
+              Discover high-quality accessories to enhance your vehicle&#39;s performance, style, and functionality
+            </p>
+          </div>
           
           {/* Animated decorative elements */}
-          <div className="absolute -top-10 -left-10 w-32 h-32 bg-red-600 rounded-full filter blur-xl opacity-20 animate-pulse-slow"></div>
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-red-500 rounded-full filter blur-xl opacity-20 animate-pulse-medium"></div>
+          <div className="absolute -top-10 -left-10 w-32 h-32 bg-red-600 rounded-full filter blur-xl opacity-20 animate-pulse-slow animate-morphing"></div>
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-red-500 rounded-full filter blur-xl opacity-20 animate-pulse-medium animate-float"></div>
         </div>
       </div>
 
@@ -374,7 +389,7 @@ export default function Products() {
               {sortedProducts.map((product, index) => (
                 <div
                   key={product.id}
-                  className={`bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex ${
+                  className={`bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex transform-3d card-hover glass-dark ${
                     viewMode === 'list' ? 'flex-row' : 'flex-col h-full'
                   }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -414,14 +429,37 @@ export default function Products() {
                     </div>
 
                     <div className="mt-auto flex gap-2">
-                      <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                      <button 
+                        onClick={() => {
+                          if (window.showModernAlert) {
+                            window.showModernAlert(`Added to cart! 🛒\n\n${product.name} - ₹${product.price}\n\nThank you for your interest! Contact us for purchase.\n\nPhone: 7456886910, 9045030110\nEmail: shazizaidi52058@gmail.com`, 'success', 6000);
+                          }
+                        }}
+                        className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 liquid-btn neon-border"
+                      >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
                         Add to Cart
                       </button>
-                      <button className="px-4 py-2 border border-gray-600 text-gray-300 hover:bg-gray-700 rounded-lg transition-all duration-300 transform hover:scale-110 group">
-                        <svg className="w-5 h-5 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <button 
+                        onClick={() => toggleFavorite(product.id)}
+                        className={`px-4 py-2 border rounded-lg transition-all duration-300 transform hover:scale-110 group ${
+                          favorites.has(product.id) 
+                            ? 'border-red-500 bg-red-500/10' 
+                            : 'border-gray-600 text-gray-300 hover:bg-gray-700'
+                        }`}
+                      >
+                        <svg 
+                          className={`w-5 h-5 transition-colors duration-300 ${
+                            favorites.has(product.id) 
+                              ? 'text-red-500 fill-current' 
+                              : 'group-hover:text-red-500'
+                          }`} 
+                          fill={favorites.has(product.id) ? "currentColor" : "none"} 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                       </button>
@@ -446,7 +484,14 @@ export default function Products() {
           <p className="text-xl text-red-100 mb-8">
             Our automotive experts are here to help you find the perfect accessories for your vehicle
           </p>
-          <button className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <button 
+            onClick={() => {
+              if (window.showModernAlert) {
+                window.showModernAlert('Contact Our Experts! 📞\n\nPhone: 7456886910, 9045030110\nEmail: shazizaidi52058@gmail.com\n\nWe are here to help you choose the perfect accessories for your vehicle!', 'info', 6000);
+              }
+            }}
+            className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl liquid-btn"
+          >
             Contact Our Experts
           </button>
         </div>

@@ -101,9 +101,59 @@ export default function Contact() {
     if (validateForm()) {
       setIsSubmitting(true)
       
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false)
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+
+        const result = await response.json()
+
+        if (response.ok) {
+          // Open email client with pre-filled content
+          if (result.mailtoLink) {
+            window.open(result.mailtoLink)
+          }
+          
+          setSubmitSuccess(true)
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          })
+          
+          // Reset success message after 5 seconds
+          setTimeout(() => setSubmitSuccess(false), 5000)
+        } else {
+          console.error('Form submission error:', result.error)
+          // You could show an error message to the user here
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error)
+        // Fallback to mailto if API fails
+        const emailContent = `
+New Contact Form Submission:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent from The Accessory Center contact form.
+        `
+        const mailtoLink = `mailto:shazizaidi52058@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailContent)}`
+        window.open(mailtoLink)
+        
         setSubmitSuccess(true)
         setFormData({
           firstName: '',
@@ -114,9 +164,10 @@ export default function Contact() {
           message: ''
         })
         
-        // Reset success message after 5 seconds
         setTimeout(() => setSubmitSuccess(false), 5000)
-      }, 2000)
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
@@ -128,7 +179,7 @@ export default function Contact() {
         </svg>
       ),
       title: 'Phone',
-      details: ['(555) 123-4567', '(555) 123-4568'],
+      details: ['7456886910', '9045030110'],
       action: 'Call us now'
     },
     {
@@ -138,7 +189,7 @@ export default function Contact() {
         </svg>
       ),
       title: 'Email',
-      details: ['info@accessorycenter.com', 'support@accessorycenter.com'],
+      details: ['shazizaidi52058@gmail.com'],
       action: 'Send us an email'
     },
     {
@@ -190,16 +241,16 @@ export default function Contact() {
                 "contactPoint": [
                   {
                     "@type": "ContactPoint",
-                    "telephone": "(555) 123-4567",
+                    "telephone": "7456886910",
                     "contactType": "customer service",
-                    "email": "info@accessorycenter.com",
+                    "email": "shazizaidi52058@gmail.com",
                     "availableLanguage": "English"
                   },
                   {
                     "@type": "ContactPoint",
-                    "telephone": "(555) 123-4568",
+                    "telephone": "9045030110",
                     "contactType": "technical support",
-                    "email": "support@accessorycenter.com"
+                    "email": "shazizaidi52058@gmail.com"
                   }
                 ],
                 "openingHours": [
@@ -213,13 +264,15 @@ export default function Contact() {
         />
       </Head>
       <div className="min-h-screen bg-gray-900">
-      {/* Hero Section */}
-      <div className="bg-gray-800 py-20">
+      {/* Hero Section with Cool Effects */}
+      <div className="bg-gray-800 py-20 particles cyber-grid-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">Contact Us</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
-            Get in touch with our team of automotive experts. We&#39;re here to help you with any questions or concerns.
-          </p>
+          <div className="glass-dark p-8 rounded-2xl animate-float">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down neon-text">Contact Us</h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200 holographic">
+              Get in touch with our team of automotive experts. We&#39;re here to help you with any questions or concerns.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -235,7 +288,7 @@ export default function Contact() {
             {contactMethods.map((method, index) => (
               <div 
                 key={index} 
-                className="bg-gray-800 p-6 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2"
+                className="bg-gray-800 p-6 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2 glass-dark card-hover animate-float"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 transition-transform duration-300 hover:rotate-12">
@@ -247,7 +300,20 @@ export default function Contact() {
                     <p key={idx} className="text-gray-300">{detail}</p>
                   ))}
                 </div>
-                <button className="text-red-400 hover:text-red-300 font-medium transition-colors transform hover:scale-105">
+                <button 
+                  onClick={() => {
+                    if (window.showModernAlert) {
+                      if (method.title === 'Phone') {
+                        window.showModernAlert('Call us now! 📞\n\nPhone: 7456886910, 9045030110\n\nWe are available to help you with any questions!', 'info', 5000);
+                      } else if (method.title === 'Email') {
+                        window.showModernAlert('Send us an email! 📧\n\nEmail: shazizaidi52058@gmail.com\n\nWe will get back to you within 24 hours!', 'info', 5000);
+                      } else {
+                        window.showModernAlert('Visit our store! 📍\n\nLocation: Sadaat Hostel, Arya Samaj Road, Muzaffarnagar\n\nCome and see our premium car accessories!', 'info', 5000);
+                      }
+                    }
+                  }}
+                  className="text-red-400 hover:text-red-300 font-medium transition-colors transform hover:scale-105"
+                >
                   {method.action}
                 </button>
               </div>
@@ -406,7 +472,7 @@ export default function Contact() {
                   className={`w-full py-3 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
                     isSubmitting
                       ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                      : 'bg-red-600 hover:bg-red-700 text-white'
+                      : 'bg-red-600 hover:bg-red-700 text-white liquid-btn neon-border'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -489,12 +555,26 @@ export default function Contact() {
             Our customer support team is available to help you with any urgent questions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+15551234567" className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              Call Now: (555) 123-4567
-            </a>
-            <a href="mailto:support@accessorycenter.com" className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => {
+                if (window.showModernAlert) {
+                  window.showModernAlert('Call us now! 📞\n\nPhone: 7456886910, 9045030110\n\nWe are here to help you with any urgent questions!', 'info', 5000);
+                }
+              }}
+              className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 liquid-btn"
+            >
+              Call Now: 7456886910
+            </button>
+            <button 
+              onClick={() => {
+                if (window.showModernAlert) {
+                  window.showModernAlert('Email us! 📧\n\nEmail: shazizaidi52058@gmail.com\n\nSend us your questions and we will respond quickly!', 'info', 5000);
+                }
+              }}
+              className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 liquid-btn"
+            >
               Email Support
-            </a>
+            </button>
           </div>
         </div>
       </div>

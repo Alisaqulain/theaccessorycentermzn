@@ -42,10 +42,10 @@ export default function Home() {
               "name": "The Accessory Center Muzaffarnagar",
               "description": "Premium car accessories and modifications store in Muzaffarnagar",
               "url": "https://theaccessorycentermzn.in",
-              "logo": "https://theaccessorycentermzn.in/logo.jpg",
-              "image": "https://theaccessorycentermzn.in/logo.jpg",
-              "telephone": "(555) 123-4567",
-              "email": "info@accessorycenter.com",
+              "logo": "https://theaccessorycentermzn.in/car.png",
+              "image": "https://theaccessorycentermzn.in/car.png",
+              "telephone": ["+917456886910", "+919045030110"],
+              "email": "shazizaidi52058@gmail.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Sadaat Hostel, Arya Samaj Road",
@@ -99,7 +99,7 @@ export default function Home() {
         />
       </Head>
       <main className="flex flex-col items-center justify-center overflow-hidden">
-      {/* Hero Section with Parallax Effect */}
+      {/* Hero Section - Optimized */}
       <section className="relative w-full h-[90vh] overflow-hidden">
         <div
           id="parallax-bg"
@@ -113,16 +113,30 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white animate-fade-in-down">
-            Transform Your Ride
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 mt-4 animate-fade-in-up delay-200">
-            Premium accessories to style and protect your car
-          </p>
-          <button className="mt-6 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 animate-fade-in-up delay-500">
-           <a href="/products"> Shop Now</a>
-          </button>
+        <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center">
+          <div className="glass-dark p-8 rounded-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-white neon-text">
+              Transform Your Ride
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mt-4">
+              Premium accessories to style and protect your car
+            </p>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (window.showModernAlert) {
+                  window.showModernAlert('Redirecting to Products! 🛒\n\nYou will be taken to our full product catalog.', 'info', 2000);
+                  setTimeout(() => {
+                    window.location.href = '/products';
+                  }, 1000);
+                }
+              }}
+              className="mt-6 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+            >
+              Shop Now
+            </button>
+          </div>
         </div>
       </section>
 
@@ -183,88 +197,242 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* Featured Products Section - Optimized */}
       <section
         ref={ref2}
         className={`py-16 px-6 bg-black/50 w-full transition-all duration-700 ${
           inView2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Featured Products
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-            <div className="overflow-hidden">
-              <Image
-                src="/images/car horn.avif"
-                alt="Premium Car Floor Mats - High-quality automotive floor protection"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">Premium Car Mat</h3>
-              <p className="text-gray-600 mt-2">₹499</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                Buy Now
-              </button>
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4 neon-text">
+              Featured Products
+            </h2>
+            <p className="text-gray-300 text-lg">
+              Discover our most popular car accessories
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-            <div className="overflow-hidden">
-              <Image
-                src="/images/car streeing cover.jpg"
-                alt="All-Weather Car Cover - Premium vehicle protection and weather resistance"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
-              />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Product 1 - Premium Car Horn */}
+            <div className="glass-dark rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/images/car horn.avif"
+                  alt="Premium Car Horn - High-quality automotive horn"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Featured
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-white text-sm ml-2">(127 reviews)</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Premium Car Horn</h3>
+                <p className="text-gray-300 text-sm mb-4">High-quality automotive horn for better safety</p>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-red-500">₹499</span>
+                  <span className="text-gray-400 text-sm">In Stock</span>
+                </div>
+                <div className="flex gap-2">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to cart! 🛒\n\nPremium Car Horn - ₹499\n\nThank you for your interest! Contact us for purchase.', 'success', 5000);
+                      }
+                    }}
+                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-medium"
+                  >
+                    Add to Cart
+                  </button>
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to favorites! ❤️\n\nPremium Car Horn has been saved to your favorites.', 'success', 3000);
+                      }
+                    }}
+                    className="px-4 py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                  >
+                    ♥
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">All-Weather Car Cover</h3>
-              <p className="text-gray-600 mt-2">₹199</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                Buy Now
-              </button>
+
+            {/* Product 2 - Premium Steering Cover */}
+            <div className="glass-dark rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/images/car streeing cover.jpg"
+                  alt="Premium Steering Cover - High-quality automotive steering wheel cover"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Featured
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-white text-sm ml-2">(89 reviews)</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Premium Steering Cover</h3>
+                <p className="text-gray-300 text-sm mb-4">Comfortable and stylish steering wheel protection</p>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-red-500">₹199</span>
+                  <span className="text-gray-400 text-sm">In Stock</span>
+                </div>
+                <div className="flex gap-2">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to cart! 🛒\n\nPremium Steering Cover - ₹199\n\nThank you for your interest! Contact us for purchase.', 'success', 5000);
+                      }
+                    }}
+                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-medium"
+                  >
+                    Add to Cart
+                  </button>
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to favorites! ❤️\n\nPremium Steering Cover has been saved to your favorites.', 'success', 3000);
+                      }
+                    }}
+                    className="px-4 py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                  >
+                    ♥
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-            <div className="overflow-hidden">
-              <Image
-                src="/images/car body cover.jpg"
-                alt="Fast Car Charger - High-speed automotive charging solution"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">Fast Car Charger</h3>
-              <p className="text-gray-600 mt-2">₹999</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                Buy Now
-              </button>
+
+            {/* Product 3 - Premium Body Cover */}
+            <div className="glass-dark rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/images/car body cover.jpg"
+                  alt="Premium Body Cover - High-quality automotive body protection"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Featured
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-white text-sm ml-2">(203 reviews)</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Premium Body Cover</h3>
+                <p className="text-gray-300 text-sm mb-4">All-weather protection for your vehicle</p>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-red-500">₹999</span>
+                  <span className="text-gray-400 text-sm">In Stock</span>
+                </div>
+                <div className="flex gap-2">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to cart! 🛒\n\nPremium Body Cover - ₹999\n\nThank you for your interest! Contact us for purchase.', 'success', 5000);
+                      }
+                    }}
+                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-medium"
+                  >
+                    Add to Cart
+                  </button>
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (window.showModernAlert) {
+                        window.showModernAlert('Added to favorites! ❤️\n\nPremium Body Cover has been saved to your favorites.', 'success', 3000);
+                      }
+                    }}
+                    className="px-4 py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                  >
+                    ♥
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* Call to Action Section - Optimized */}
       <section
         ref={ref3}
         className={`py-16 px-6 w-full transition-all duration-700 ${
           inView3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="bg-red-600 rounded-xl p-10 text-center text-white max-w-5xl mx-auto transform transition-transform duration-500 hover:scale-105">
-          <h2 className="text-4xl font-bold">Upgrade Your Drive Today</h2>
+        <div className="glass-dark rounded-2xl p-10 text-center text-white max-w-5xl mx-auto transform transition-transform duration-500 hover:scale-105">
+          <h2 className="text-4xl font-bold mb-4 neon-text">Upgrade Your Drive Today</h2>
           <p className="mt-4 text-lg">
             Get premium accessories at unbeatable prices
           </p>
-          <button className="mt-6 px-6 py-3 bg-white text-red-600 rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
-           <a href="/products"> Start Shopping</a>
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              if (window.showModernAlert) {
+                window.showModernAlert('Redirecting to Products! 🛒\n\nYou will be taken to our full product catalog.', 'info', 2000);
+                setTimeout(() => {
+                  window.location.href = '/products';
+                }, 1000);
+              }
+            }}
+            className="mt-6 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+          >
+            Start Shopping
           </button>
         </div>
       </section>

@@ -1,23 +1,23 @@
 {
-  "name": "The Accessory Center Muzaffarnagar - Premium Car Accessories",
-  "short_name": "Accessory Center MZN",
+  "name": "The Accessory Center - Premium Car Accessories",
+  "short_name": "Accessory Center",
   "description": "Transform your ride with premium car accessories in Muzaffarnagar. Expert installation, quality products, and exceptional service.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111827",
+  "background_color": "#000000",
   "theme_color": "#dc2626",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/logo.jpg",
+      "src": "/car.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo.jpg",
+      "src": "/car.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
