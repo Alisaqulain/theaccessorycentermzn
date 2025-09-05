@@ -61,26 +61,26 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About The Accessory Center | Premium Car Accessories Since 2010</title>
-        <meta name="description" content="Learn about The Accessory Center - your trusted partner in automotive excellence for over a decade. Premium car accessories, expert installation, and exceptional customer service." />
-        <meta name="keywords" content="about accessory center, car accessories company, automotive excellence, premium car parts, expert installation, customer service" />
-        <link rel="canonical" href="https://theaccessorycenter.com/about" />
+        <title>About The Accessory Center Muzaffarnagar | Premium Car Accessories Since 2010</title>
+        <meta name="description" content="Learn about The Accessory Center Muzaffarnagar - your trusted partner in automotive excellence for over a decade. Premium car accessories, expert installation, and exceptional customer service in Muzaffarnagar." />
+        <meta name="keywords" content="about accessory center muzaffarnagar, car accessories company muzaffarnagar, automotive excellence muzaffarnagar, premium car parts muzaffarnagar, expert installation muzaffarnagar, customer service muzaffarnagar" />
+        <link rel="canonical" href="https://theaccessorycentermzn.in/about" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AboutPage",
-              "name": "About The Accessory Center",
-              "description": "Your trusted partner in automotive excellence for over a decade",
-              "url": "https://theaccessorycenter.com/about",
+              "name": "About The Accessory Center Muzaffarnagar",
+              "description": "Your trusted partner in automotive excellence for over a decade in Muzaffarnagar",
+              "url": "https://theaccessorycentermzn.in/about",
               "mainEntity": {
                 "@type": "Organization",
-                "name": "The Accessory Center",
-                "description": "Premium car accessories and modifications store",
+                "name": "The Accessory Center Muzaffarnagar",
+                "description": "Premium car accessories and modifications store in Muzaffarnagar",
                 "foundingDate": "2010",
-                "url": "https://theaccessorycenter.com",
-                "logo": "https://theaccessorycenter.com/logo.jpg",
+                "url": "https://theaccessorycentermzn.in",
+                "logo": "https://theaccessorycentermzn.in/logo.jpg",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Sadaat Hostel, Arya Samaj Road",

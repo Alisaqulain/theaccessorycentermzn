@@ -274,10 +274,10 @@ export default function Products() {
   return (
     <>
       <Head>
-        <title>Car Accessories Store | Speakers, Headlights, Horns & More</title>
-        <meta name="description" content="Shop premium car accessories including speakers, headlights, horns, LED lights, door visors, bass tubes, ambient lights, wheel caps, seat covers, and complete car customization services." />
-        <meta name="keywords" content="car accessories store, car speakers, headlights, horns, LED lights, door visor, bass tube, ambient light, wheel caps, seat covers, bumper guard, body cover, car coating, car customization" />
-        <link rel="canonical" href="https://theaccessorycenter.com/products" />
+        <title>Car Accessories Store in Muzaffarnagar | Speakers, Headlights, Horns & More</title>
+        <meta name="description" content="Shop premium car accessories in Muzaffarnagar including speakers, headlights, horns, LED lights, door visors, bass tubes, ambient lights, wheel caps, seat covers, and complete car customization services." />
+        <meta name="keywords" content="car accessories store muzaffarnagar, car speakers muzaffarnagar, headlights muzaffarnagar, horns muzaffarnagar, LED lights muzaffarnagar, door visor muzaffarnagar, bass tube muzaffarnagar, ambient light muzaffarnagar, wheel caps muzaffarnagar, seat covers muzaffarnagar, bumper guard muzaffarnagar, body cover muzaffarnagar, car coating muzaffarnagar, car customization muzaffarnagar" />
+        <link rel="canonical" href="https://theaccessorycentermzn.in/products" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -286,7 +286,7 @@ export default function Products() {
               "@type": "CollectionPage",
               "name": "Car Accessories Store",
               "description": "Premium car accessories and automotive parts",
-              "url": "https://theaccessorycenter.com/products",
+              "url": "https://theaccessorycentermzn.in/products",
               "mainEntity": {
                 "@type": "ItemList",
                 "itemListElement": products.map((product, index) => ({
@@ -296,7 +296,7 @@ export default function Products() {
                     "@type": "Product",
                     "name": product.name,
                     "description": product.description,
-                    "image": `https://theaccessorycenter.com${product.image}`,
+                    "image": `https://theaccessorycentermzn.in${product.image}`,
                     "offers": {
                       "@type": "Offer",
                       "price": product.price,

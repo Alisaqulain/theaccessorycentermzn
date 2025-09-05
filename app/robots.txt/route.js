@@ -3,7 +3,7 @@ export async function GET() {
 Allow: /
 
 # Sitemap
-Sitemap: https://theaccessorycenter.com/sitemap.xml
+Sitemap: https://theaccessorycentermzn.in/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
@@ -22,7 +22,7 @@ Allow: /images/
 Allow: /public/
 
 # Host
-Host: https://theaccessorycenter.com`
+Host: https://theaccessorycentermzn.in`
 
   return new Response(robotsTxt, {
     headers: {

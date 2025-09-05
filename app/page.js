@@ -29,21 +29,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Premium Car Accessories & Modifications | The Accessory Center</title>
-        <meta name="description" content="Transform your ride with premium car accessories, performance parts, and modifications. Expert installation, quality products, and exceptional service. Shop interior, exterior, electronics, and performance accessories." />
-        <meta name="keywords" content="car accessories, automotive parts, car modifications, performance parts, interior accessories, exterior accessories, car electronics, LED headlights, car covers, seat covers" />
-        <link rel="canonical" href="https://theaccessorycenter.com" />
+        <title>Premium Car Accessories & Modifications in Muzaffarnagar | The Accessory Center MZN</title>
+        <meta name="description" content="Transform your ride with premium car accessories in Muzaffarnagar. Expert installation, quality products, and exceptional service. Shop speakers, headlights, horns, LED lights, and complete car customization services." />
+        <meta name="keywords" content="car accessories muzaffarnagar, automotive parts muzaffarnagar, car modifications muzaffarnagar, car speakers muzaffarnagar, headlights muzaffarnagar, car horns muzaffarnagar, LED lights muzaffarnagar, car accessories near me" />
+        <link rel="canonical" href="https://theaccessorycentermzn.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AutoPartsStore",
-              "name": "The Accessory Center",
-              "description": "Premium car accessories and modifications store",
-              "url": "https://theaccessorycenter.com",
-              "logo": "https://theaccessorycenter.com/logo.jpg",
-              "image": "https://theaccessorycenter.com/logo.jpg",
+              "name": "The Accessory Center Muzaffarnagar",
+              "description": "Premium car accessories and modifications store in Muzaffarnagar",
+              "url": "https://theaccessorycentermzn.in",
+              "logo": "https://theaccessorycentermzn.in/logo.jpg",
+              "image": "https://theaccessorycentermzn.in/logo.jpg",
               "telephone": "(555) 123-4567",
               "email": "info@accessorycenter.com",
               "address": {
@@ -60,9 +60,9 @@ export default function Home() {
                 "Su 12:00-17:00"
               ],
               "sameAs": [
-                "https://www.facebook.com/accessorycenter",
-                "https://www.instagram.com/accessorycenter",
-                "https://www.twitter.com/accessorycenter"
+                "https://www.facebook.com/accessorycentermzn",
+                "https://www.instagram.com/accessorycentermzn",
+                "https://www.twitter.com/accessorycentermzn"
               ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -72,24 +72,24 @@ export default function Home() {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "LED Headlight Kit",
-                      "description": "Bright LED headlights for improved visibility and modern look"
+                      "name": "Car Speakers",
+                      "description": "High-quality car speakers for enhanced audio experience"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "Carbon Fiber Spoiler",
-                      "description": "Lightweight carbon fiber rear spoiler for enhanced aerodynamics"
+                      "name": "LED Headlights",
+                      "description": "Premium LED headlights for improved visibility and modern look"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "Leather Seat Covers",
-                      "description": "Premium leather seat covers for luxury comfort and style"
+                      "name": "Car Horns",
+                      "description": "Loud and clear car horns for safety and attention"
                     }
                   }
                 ]

@@ -7,29 +7,31 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: {
-    default: 'The Accessory Center - Premium Car Accessories & Modifications',
-    template: '%s | The Accessory Center'
+    default: 'The Accessory Center Muzaffarnagar - Premium Car Accessories & Modifications',
+    template: '%s | The Accessory Center MZN'
   },
-  description: 'Transform your ride with premium car accessories, performance parts, and modifications. Expert installation, quality products, and exceptional service. Shop interior, exterior, electronics, and performance accessories.',
+  description: 'Transform your ride with premium car accessories in Muzaffarnagar. Expert installation, quality products, and exceptional service. Shop speakers, headlights, horns, LED lights, and complete car customization services.',
   keywords: [
-    'car accessories',
-    'automotive parts',
-    'car modifications',
-    'performance parts',
-    'interior accessories',
-    'exterior accessories',
-    'car electronics',
-    'LED headlights',
-    'car covers',
-    'seat covers',
-    'dash cameras',
-    'car chargers',
-    'brake pads',
-    'air filters',
-    'exhaust systems',
-    'carbon fiber spoilers',
-    'car customization',
-    'automotive upgrades'
+    'car accessories muzaffarnagar',
+    'automotive parts muzaffarnagar',
+    'car modifications muzaffarnagar',
+    'car speakers muzaffarnagar',
+    'headlights muzaffarnagar',
+    'car horns muzaffarnagar',
+    'LED lights muzaffarnagar',
+    'door visor muzaffarnagar',
+    'bass tube muzaffarnagar',
+    'ambient light muzaffarnagar',
+    'wheel caps muzaffarnagar',
+    'steering cover muzaffarnagar',
+    'bumper guard muzaffarnagar',
+    'seat covers muzaffarnagar',
+    'body cover muzaffarnagar',
+    'car coating muzaffarnagar',
+    'car customization muzaffarnagar',
+    'automotive services muzaffarnagar',
+    'car accessories near me',
+    'auto parts store muzaffarnagar'
   ],
   authors: [{ name: 'The Accessory Center' }],
   creator: 'The Accessory Center',
@@ -39,14 +41,14 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://theaccessorycenter.com'),
+  metadataBase: new URL('https://theaccessorycentermzn.in'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'The Accessory Center - Premium Car Accessories & Modifications',
-    description: 'Transform your ride with premium car accessories, performance parts, and modifications. Expert installation, quality products, and exceptional service.',
-    url: 'https://theaccessorycenter.com',
+    title: 'The Accessory Center Muzaffarnagar - Premium Car Accessories & Modifications',
+    description: 'Transform your ride with premium car accessories in Muzaffarnagar. Expert installation, quality products, and exceptional service. Shop speakers, headlights, horns, LED lights, and complete car customization services.',
+    url: 'https://theaccessorycentermzn.in',
     siteName: 'The Accessory Center',
     images: [
       {
@@ -61,8 +63,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Accessory Center - Premium Car Accessories',
-    description: 'Transform your ride with premium car accessories, performance parts, and modifications.',
+    title: 'The Accessory Center Muzaffarnagar - Premium Car Accessories',
+    description: 'Transform your ride with premium car accessories in Muzaffarnagar. Expert installation, quality products, and exceptional service.',
     images: ['/logo.jpg'],
     creator: '@accessorycenter',
   },

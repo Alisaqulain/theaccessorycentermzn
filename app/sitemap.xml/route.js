@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = 'https://theaccessorycenter.com'
+  const baseUrl = 'https://theaccessorycentermzn.in'
   
   const staticPages = [
     {

@@ -163,22 +163,22 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact The Accessory Center | Get Expert Automotive Support</title>
-        <meta name="description" content="Contact The Accessory Center for expert automotive support. Get help with car accessories, installation guidance, and product recommendations. Located in Muzaffarnagar, UP." />
-        <meta name="keywords" content="contact accessory center, automotive support, car accessories help, installation guidance, expert advice, Muzaffarnagar" />
-        <link rel="canonical" href="https://theaccessorycenter.com/contact" />
+        <title>Contact The Accessory Center Muzaffarnagar | Get Expert Automotive Support</title>
+        <meta name="description" content="Contact The Accessory Center Muzaffarnagar for expert automotive support. Get help with car accessories, installation guidance, and product recommendations. Located in Muzaffarnagar, UP." />
+        <meta name="keywords" content="contact accessory center muzaffarnagar, automotive support muzaffarnagar, car accessories help muzaffarnagar, installation guidance muzaffarnagar, expert advice muzaffarnagar, car accessories near me muzaffarnagar" />
+        <link rel="canonical" href="https://theaccessorycentermzn.in/contact" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ContactPage",
-              "name": "Contact The Accessory Center",
-              "description": "Get expert automotive support and guidance",
-              "url": "https://theaccessorycenter.com/contact",
+              "name": "Contact The Accessory Center Muzaffarnagar",
+              "description": "Get expert automotive support and guidance in Muzaffarnagar",
+              "url": "https://theaccessorycentermzn.in/contact",
               "mainEntity": {
                 "@type": "Organization",
-                "name": "The Accessory Center",
+                "name": "The Accessory Center Muzaffarnagar",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Sadaat Hostel, Arya Samaj Road",

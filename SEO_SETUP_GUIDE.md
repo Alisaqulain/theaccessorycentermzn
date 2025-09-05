@@ -1,7 +1,7 @@
-# SEO Setup Guide for The Accessory Center
+# SEO Setup Guide for The Accessory Center Muzaffarnagar
 
 ## Overview
-This guide outlines the comprehensive SEO implementation for The Accessory Center website. All SEO optimizations have been implemented for production readiness.
+This guide outlines the comprehensive SEO implementation for The Accessory Center Muzaffarnagar website (theaccessorycentermzn.in). All SEO optimizations have been implemented for production readiness with Muzaffarnagar-specific local SEO targeting.
 
 ## ✅ Implemented SEO Features
 
@@ -51,31 +51,36 @@ Update the following in `app/layout.js`:
 'your-yandex-verification-code' // Yandex Webmaster
 ```
 
-### 2. Update Domain
-Replace `https://theaccessorycenter.com` with your actual domain in:
-- `app/layout.js` (metadataBase)
-- `lib/seo.js` (siteUrl)
-- All canonical URLs in page components
+### 2. Domain Configuration ✅
+Domain has been updated to `https://theaccessorycentermzn.in` in:
+- `app/layout.js` (metadataBase) ✅
+- `lib/seo.js` (siteUrl) ✅
+- All canonical URLs in page components ✅
+- Sitemap and robots.txt ✅
 
-### 3. Social Media Links
-Update social media URLs in `lib/seo.js`:
+### 3. Social Media Links ✅
+Social media URLs have been updated in `lib/seo.js`:
 ```javascript
 social: {
-  twitter: '@your-twitter-handle',
-  facebook: 'https://www.facebook.com/your-page',
-  instagram: 'https://www.instagram.com/your-page',
-  linkedin: 'https://www.linkedin.com/company/your-company'
+  twitter: '@accessorycentermzn',
+  facebook: 'https://www.facebook.com/accessorycentermzn',
+  instagram: 'https://www.instagram.com/accessorycentermzn',
+  linkedin: 'https://www.linkedin.com/company/accessorycentermzn'
 }
 ```
 
-### 4. Contact Information
-Update contact details in `lib/seo.js`:
+### 4. Contact Information ✅
+Contact details have been updated in `lib/seo.js`:
 ```javascript
 contact: {
-  phone: 'your-phone-number',
-  email: 'your-email@domain.com',
+  phone: '(555) 123-4567',
+  email: 'info@theaccessorycentermzn.in',
   address: {
-    // Update with your actual address
+    street: 'Sadaat Hostel, Arya Samaj Road',
+    city: 'Muzaffarnagar',
+    state: 'Uttar Pradesh',
+    zip: '251002',
+    country: 'IN'
   }
 }
 ```
@@ -83,9 +88,9 @@ contact: {
 ## 📊 SEO Monitoring Setup
 
 ### 1. Google Search Console
-1. Add your website to Google Search Console
+1. Add your website to Google Search Console: `https://theaccessorycentermzn.in`
 2. Verify ownership using the meta tag
-3. Submit your sitemap: `https://yourdomain.com/sitemap.xml`
+3. Submit your sitemap: `https://theaccessorycentermzn.in/sitemap.xml`
 4. Monitor indexing status and search performance
 
 ### 2. Google Analytics
@@ -101,29 +106,31 @@ contact: {
 2. Verify ownership using the meta tag
 3. Submit your sitemap
 
-## 🎯 Target Keywords
+## 🎯 Target Keywords (Muzaffarnagar-Specific)
 
 ### Primary Keywords
-- car accessories
-- automotive parts
-- car modifications
-- performance parts
+- car accessories muzaffarnagar
+- automotive parts muzaffarnagar
+- car modifications muzaffarnagar
+- car speakers muzaffarnagar
 
 ### Secondary Keywords
-- interior accessories
-- exterior accessories
-- car electronics
-- LED headlights
-- car covers
-- seat covers
-- dash cameras
-- car chargers
+- headlights muzaffarnagar
+- car horns muzaffarnagar
+- LED lights muzaffarnagar
+- door visor muzaffarnagar
+- bass tube muzaffarnagar
+- ambient light muzaffarnagar
+- wheel caps muzaffarnagar
+- seat covers muzaffarnagar
 
 ### Long-tail Keywords
-- premium car accessories online
-- automotive parts store
-- car modification services
-- professional car accessories installation
+- car accessories near me muzaffarnagar
+- automotive parts store muzaffarnagar
+- car modification services muzaffarnagar
+- professional car accessories installation muzaffarnagar
+- car customization muzaffarnagar
+- auto parts store muzaffarnagar
 
 ## 📈 Performance Optimization
 
@@ -147,9 +154,11 @@ contact: {
 - Location-based keywords targeting
 
 ### Local Keywords
-- "car accessories near me"
-- "automotive parts [city name]"
-- "car modifications [location]"
+- "car accessories near me muzaffarnagar"
+- "automotive parts muzaffarnagar"
+- "car modifications muzaffarnagar"
+- "car accessories muzaffarnagar up"
+- "auto parts store muzaffarnagar"
 
 ## 📱 Mobile SEO
 
